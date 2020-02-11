@@ -1,5 +1,8 @@
 <template>
   <div>
+    <button v-on:click="cambiarCuenta(-1, $event)">-</button>
+    <button @click="cambiarCuenta(1, $event)">+</button>
+
     <button v-bind:disabled="deshabilitarBoton" v-on:click="decrementar">-</button>
     <span>Cuenta: {{cuenta}}</span>
     <button :disabled="!deshabilitarBoton" @click="incrementar">+</button>
@@ -26,6 +29,10 @@ export default {
     },
     decrementar() {
       this.cuenta -= 1
+    },
+    cambiarCuenta(num, event) {
+      console.log(event);
+      this.cuenta += num;
     }
   }
 }
