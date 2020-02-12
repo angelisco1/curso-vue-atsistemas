@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import './componentes-globales'
 import './directivas-globales'
+import './filtros-globales'
 
 Vue.config.productionTip = false
 

@@ -17,6 +17,7 @@ export default {
   },
   methods: {
     emitirNombre() {
+      // EventBus.$emit('onSendNombre', this.miNombre);
       EventBus.sendNombre(this.miNombre);
     }
   }

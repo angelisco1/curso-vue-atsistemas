@@ -5,13 +5,15 @@
 
     <button v-bind:disabled="deshabilitarBoton" v-on:click="decrementar">-</button>
     <span>Cuenta: {{cuenta}}</span>
-    <button :disabled="!deshabilitarBoton" @click="incrementar">+</button>
+    <button :disabled="!deshabilitarBoton" @click="incrementar">++</button>
     <input type="number" :value="cuenta" @input="modificarCuenta" />
     <input type="number" v-model.number="cuenta" />
   </div>
 </template>
 
 <script>
+import Swal from 'sweetalert2';
+
 export default {
   data () {
     return {
@@ -26,6 +28,12 @@ export default {
     },
     incrementar() {
       this.cuenta += 1
+      Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
     },
     decrementar() {
       this.cuenta -= 1
